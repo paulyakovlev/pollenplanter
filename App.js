@@ -1,14 +1,24 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { TextInput, Image, StyleSheet, Text, View } from "react-native";
 import logo from "./assets/logo.png";
 
 export default function App() {
+  const [value, onChangeText] = React.useState("9-digit zip code");
+
   return (
     <View style={styles.container}>
       <Image source={logo} style={styles.logo} />
       <Text style={styles.instructions}>
-        Welcome to PollenPlanter! Please enter your zip code to get started.
+        Welcome to PollenPlanter! Please enter your zip code below to get
+        started.
       </Text>
+      <TextInput
+        style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
+        onChangeText={text => onChangeText(text)}
+        value={value}
+        clearButtonMode={"while-editing"}
+        clearTextOnFocus={true}
+      />
     </View>
   );
 }
