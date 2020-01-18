@@ -5,7 +5,7 @@ import logo from "./assets/logo.png";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Image source={logo} style={{ width: 225, height: 225 }} />
+      <Image source={logo} style={styles.logo} />
       <Text>Welcome to PollenPlanter!</Text>
     </View>
   );
@@ -17,5 +17,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center"
+  },
+
+  logo: {
+    width: 225,
+    height: 225,
+    marginBottom: 10
   }
 });
