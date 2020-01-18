@@ -6,7 +6,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Image source={logo} style={styles.logo} />
-      <Text>Welcome to PollenPlanter!</Text>
+      <Text style={styles.instructions}>
+        Welcome to PollenPlanter! Please enter your zip code to get started.
+      </Text>
     </View>
   );
 }
@@ -23,5 +25,11 @@ const styles = StyleSheet.create({
     width: 225,
     height: 225,
     marginBottom: 10
+  },
+
+  instructions: {
+    color: "#888",
+    fontSize: 18,
+    marginHorizontal: 15
   }
 });
