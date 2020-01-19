@@ -8,7 +8,7 @@ import {
   View,
   KeyboardAvoidingView
 } from "react-native";
-import { Button, Input } from "react-native-elements";
+import { Button, Card, Input } from "react-native-elements";
 import logo from "../assets/logo.png";
 import background from "../assets/background.png";
 import * as firebase from "firebase";
@@ -29,15 +29,18 @@ class HomeScreen extends React.Component {
         <ImageBackground source={background} style={styles.backgroundImage}>
           <Text style={styles.instructions}>Welcome to PollenPlanter!</Text>
           <Image source={logo} style={styles.logo} />
-          <View style={{ width: 125 }}>
-            <Input placeholder="Zip Code" style={styles.input} />
-          </View>
-          <Button
-            buttonStyle={{ backgroundColor: "orange" }}
-            onPress={() => this.props.navigation.navigate("Pollinators")}
-            style={styles.button}
-            title="Next"
-          ></Button>
+
+          <Card>
+            <View style={{ width: 225 }}>
+              <Input placeholder="Zip Code" style={styles.input} />
+            </View>
+            <Button
+              buttonStyle={{ backgroundColor: "orange" }}
+              onPress={() => this.props.navigation.navigate("Pollinators")}
+              style={styles.button}
+              title="Next"
+            ></Button>
+          </Card>
         </ImageBackground>
       </KeyboardAvoidingView>
     );
