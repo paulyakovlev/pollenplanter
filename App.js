@@ -6,10 +6,10 @@ import * as firebase from "firebase";
 export default function App() {
   // Initialize Firebase
   const firebaseConfig = {
-    apiKey: "AIzaSyDqm-ev5ldiokXPi3nHqXtyt8l0bUd0ufM",
-    authDomain: "pollenplanter.firebaseapp.com",
-    databaseURL: "https://pollenplanter.firebaseio.com",
-    storageBucket: "pollenplanter.appspot.com"
+    apiKey: "AIzaSyBwb4yV1EUJbWab6AGyIfzrj_ShbgSdUdQ",
+    authDomain: "pollenplanter-cac8a.firebaseapp.com",
+    databaseURL: "https://pollenplanter-cac8a.firebaseio.com",
+    storageBucket: "pollenplanter-cac8a.appspot.com"
   };
 
   firebase.initializeApp(firebaseConfig);
