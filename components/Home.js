@@ -5,7 +5,6 @@ import {
   ImageBackground,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
   KeyboardAvoidingView
 } from "react-native";
@@ -13,7 +12,6 @@ import { Button, Input } from "react-native-elements";
 import logo from "../assets/logo.png";
 import background from "../assets/background.png";
 import * as firebase from "firebase";
-import { render } from "react-dom";
 
 function storeHighScore(userId, score) {
   firebase
@@ -29,16 +27,16 @@ class HomeScreen extends React.Component {
     return (
       <KeyboardAvoidingView style={styles.container} behavior={"padding"}>
         <ImageBackground source={background} style={styles.backgroundImage}>
+          <Text style={styles.instructions}>Welcome to PollenPlanter!</Text>
           <Image source={logo} style={styles.logo} />
-          <Text style={styles.instructions}>
-            Welcome to PollenPlanter! Please enter your zip code below to get
-            started.
-          </Text>
-          <Input placeholder="Zip Code" style={styles.input} />
+          <View style={{ width: 125 }}>
+            <Input placeholder="Zip Code" style={styles.input} />
+          </View>
           <Button
+            buttonStyle={{ backgroundColor: "orange" }}
             onPress={() => this.props.navigation.navigate("Pollinators")}
             style={styles.button}
-            title="button"
+            title="Next"
           ></Button>
         </ImageBackground>
       </KeyboardAvoidingView>
@@ -70,9 +68,7 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    borderColor: "white",
-    paddingHorizontal: 500,
-    width: "20%"
+    color: "white"
   },
 
   button: {
