@@ -5,8 +5,11 @@ import { ScrollView } from "react-native-gesture-handler";
 import background from "../assets/background.png";
 import List from "./PlantsList.js";
 
-
 class PlantScreen extends React.Component {
+  static navigationOptions = {
+    title: "",
+    headerTransparent: true
+  };
   render() {
     return (
       <View style={styles.container}>
@@ -41,6 +44,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginHorizontal: 15,
     marginBottom: 15,
+    marginTop: 55,
     justifyContent: "center"
   },
 

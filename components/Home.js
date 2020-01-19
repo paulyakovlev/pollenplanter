@@ -23,6 +23,10 @@ function storeHighScore(userId, score) {
 }
 
 class HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: "",
+    headerTransparent: true
+  };
   render() {
     return (
       <KeyboardAvoidingView style={styles.container} behavior={"padding"}>

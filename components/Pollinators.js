@@ -10,7 +10,12 @@ import { Button } from "react-native-elements";
 import { ScrollView } from "react-native-gesture-handler";
 import List from "./PollinatorsList.js";
 import background from "../assets/background.png";
+
 class Pollinators extends React.Component {
+  static navigationOptions = {
+    title: "",
+    headerTransparent: true
+  };
   render() {
     return (
       <View style={styles.container}>
@@ -63,7 +68,7 @@ const styles = StyleSheet.create({
 
   button: {
     color: "white",
-    marginTop: 15
+    marginTop: 45
   },
 
   backgroundImage: {
