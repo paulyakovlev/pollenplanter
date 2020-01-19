@@ -11,10 +11,6 @@ import logo from "../assets/logo.png";
 import * as firebase from "firebase";
 import { render } from "react-dom";
 
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
-}
-
 function storeHighScore(userId, score) {
   firebase
     .database()
@@ -23,13 +19,6 @@ function storeHighScore(userId, score) {
       highscore: score
     });
 }
-// Initialize Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyBwb4yV1EUJbWab6AGyIfzrj_ShbgSdUdQ",
-  authDomain: "pollenplanter-cac8a.firebaseapp.com",
-  databaseURL: "https://pollenplanter-cac8a.firebaseio.com",
-  storageBucket: "pollenplanter-cac8a.appspot.com"
-};
 
 class HomeScreen extends React.Component {
   render() {

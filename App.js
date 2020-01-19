@@ -11,6 +11,14 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyBwb4yV1EUJbWab6AGyIfzrj_ShbgSdUdQ",
+  authDomain: "pollenplanter-cac8a.firebaseapp.com",
+  databaseURL: "https://pollenplanter-cac8a.firebaseio.com",
+  storageBucket: "pollenplanter-cac8a.appspot.com"
+};
+
 const RootStack = createStackNavigator({
   Home: {
     screen: HomeScreen
@@ -24,11 +32,3 @@ const RootStack = createStackNavigator({
 });
 
 export default createAppContainer(RootStack);
-
-// Initialize Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyBwb4yV1EUJbWab6AGyIfzrj_ShbgSdUdQ",
-  authDomain: "pollenplanter-cac8a.firebaseapp.com",
-  databaseURL: "https://pollenplanter-cac8a.firebaseio.com",
-  storageBucket: "pollenplanter-cac8a.appspot.com"
-};
