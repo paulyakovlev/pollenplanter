@@ -1,8 +1,18 @@
 import React from "react";
 import { TextInput, Image, StyleSheet, Text, View } from "react-native";
 import logo from "./assets/logo.png";
+import * as firebase from "firebase";
 
 export default function App() {
+  // Initialize Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyDqm-ev5ldiokXPi3nHqXtyt8l0bUd0ufM",
+    authDomain: "pollenplanter.firebaseapp.com",
+    databaseURL: "https://pollenplanter.firebaseio.com",
+    storageBucket: "pollenplanter.appspot.com"
+  };
+
+  firebase.initializeApp(firebaseConfig);
   const [value, onChangeText] = React.useState("9-digit zip code");
 
   return (
