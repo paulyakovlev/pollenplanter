@@ -55,6 +55,7 @@ class HomeScreen extends React.Component {
     );
   }
 }
+
 export default HomeScreen;
 
 const styles = StyleSheet.create({

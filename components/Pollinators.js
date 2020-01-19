@@ -27,9 +27,27 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
 
+  logo: {
+    width: 225,
+    height: 225,
+    marginBottom: 10
+  },
+
   instructions: {
     color: "black",
     fontSize: 18,
-    marginHorizontal: 15
+    marginHorizontal: 15,
+    marginBottom: 15
+  },
+
+  textBox: {
+    height: 40,
+    width: 120,
+    borderColor: "gray",
+    borderWidth: 1
+  },
+
+  button: {
+    color: "#888"
   }
 });
