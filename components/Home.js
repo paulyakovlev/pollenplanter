@@ -2,12 +2,15 @@ import React from "react";
 import {
   TextInput,
   Image,
+  ImageBackground,
   StyleSheet,
   Text,
   TouchableOpacity,
   View
 } from "react-native";
+import { Input } from "react-native-elements";
 import logo from "../assets/logo.png";
+import background from "../assets/background.png";
 import * as firebase from "firebase";
 import { render } from "react-dom";
 
@@ -24,22 +27,20 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image source={logo} style={styles.logo} />
-        <Text style={styles.instructions}>
-          Welcome to PollenPlanter! Please enter your zip code below to get
-          started.
-        </Text>
-        <TextInput
-          style={styles.textBox}
-          clearButtonMode={"while-editing"}
-          clearTextOnFocus={true}
-        />
-        <TouchableOpacity
-          onPress={() => this.props.navigation.navigate("Pollinators")}
-          style={styles.button}
-        >
-          <Text style={styles.button}>Next</Text>
-        </TouchableOpacity>
+        <ImageBackground source={background} style={styles.backgroundImage}>
+          <Image source={logo} style={styles.logo} />
+          <Text style={styles.instructions}>
+            Welcome to PollenPlanter! Please enter your zip code below to get
+            started.
+          </Text>
+          <Input placeholder="Zip Code" style={styles.input} />
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("Pollinators")}
+            style={styles.button}
+          >
+            <Text style={styles.button}>Next</Text>
+          </TouchableOpacity>
+        </ImageBackground>
       </View>
     );
   }
@@ -62,20 +63,26 @@ const styles = StyleSheet.create({
   },
 
   instructions: {
-    color: "black",
+    color: "white",
     fontSize: 18,
     marginHorizontal: 15,
     marginBottom: 15
   },
 
-  textBox: {
-    height: 40,
-    width: 120,
-    borderColor: "gray",
-    borderWidth: 1
+  input: {
+    borderColor: "gray"
   },
 
   button: {
-    color: "#888"
+    color: "black"
+  },
+
+  backgroundImage: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    opacity: 0.7
   }
 });

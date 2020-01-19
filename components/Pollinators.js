@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import List from './PollinatorsList.js'
+import List from "./PollinatorsList.js";
+import { ScrollView } from "react-native-gesture-handler";
 
 class Pollinators extends React.Component {
   render() {
@@ -13,8 +14,10 @@ class Pollinators extends React.Component {
         >
           <Text style={styles.button}>Next</Text>
         </TouchableOpacity>
-      <List />
-      </View>  
+        <ScrollView>
+          <List />
+        </ScrollView>
+      </View>
     );
   }
 }
@@ -26,7 +29,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    marginHorizontal: 5
   },
 
   logo: {
