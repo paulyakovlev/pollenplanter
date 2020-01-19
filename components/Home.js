@@ -30,12 +30,12 @@ class HomeScreen extends React.Component {
           <Text style={styles.instructions}>Welcome to PollenPlanter!</Text>
           <Image source={logo} style={styles.logo} />
 
-          <Card>
+          <Card borderRadius={25}>
             <View style={{ width: 225 }}>
               <Input placeholder="Zip Code" style={styles.input} />
             </View>
             <Button
-              buttonStyle={{ backgroundColor: "orange" }}
+              buttonStyle={{ backgroundColor: "orange", borderRadius: 25 }}
               onPress={() => this.props.navigation.navigate("Pollinators")}
               style={styles.button}
               title="Next"
