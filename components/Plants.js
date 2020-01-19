@@ -1,11 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ImageBackground } from "react-native";
+import background from "../assets/background.png";
 
 class PlantScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.instructions}>Plants view</Text>
+        <ImageBackground source={background} style={styles.backgroundImage}>
+          <Text style={styles.instructions}>Plants view</Text>
+        </ImageBackground>
       </View>
     );
   }
@@ -43,5 +46,14 @@ const styles = StyleSheet.create({
 
   button: {
     color: "#888"
+  },
+
+  backgroundImage: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    opacity: 0.7
   }
 });
