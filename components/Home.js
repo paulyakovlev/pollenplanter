@@ -6,9 +6,10 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View
+  View,
+  KeyboardAvoidingView
 } from "react-native";
-import { Input } from "react-native-elements";
+import { Button, Input } from "react-native-elements";
 import logo from "../assets/logo.png";
 import background from "../assets/background.png";
 import * as firebase from "firebase";
@@ -26,7 +27,7 @@ function storeHighScore(userId, score) {
 class HomeScreen extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView style={styles.container} behavior={"padding"}>
         <ImageBackground source={background} style={styles.backgroundImage}>
           <Image source={logo} style={styles.logo} />
           <Text style={styles.instructions}>
@@ -34,14 +35,14 @@ class HomeScreen extends React.Component {
             started.
           </Text>
           <Input placeholder="Zip Code" style={styles.input} />
-          <TouchableOpacity
+          <Button
+            type="outline"
             onPress={() => this.props.navigation.navigate("Pollinators")}
             style={styles.button}
-          >
-            <Text style={styles.button}>Next</Text>
-          </TouchableOpacity>
+            title="button"
+          ></Button>
         </ImageBackground>
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }
@@ -70,11 +71,14 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    borderColor: "gray"
+    borderColor: "gray",
+    paddingHorizontal: 500,
+    width: "20%"
   },
 
   button: {
-    color: "black"
+    color: "black",
+    marginTop: 15
   },
 
   backgroundImage: {
