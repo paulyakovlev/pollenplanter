@@ -7,7 +7,9 @@ class Pollinators extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.instructions}>Pollinators view</Text>
+        <Text style={styles.instructions}>
+          Which pollinators would you like in your garden?
+        </Text>
         <TouchableOpacity
           onPress={() => this.props.navigation.navigate("Plants")}
           style={styles.button}
@@ -43,7 +45,8 @@ const styles = StyleSheet.create({
     color: "black",
     fontSize: 18,
     marginHorizontal: 15,
-    marginBottom: 15
+    marginBottom: 15,
+    marginTop: 35
   },
 
   textBox: {

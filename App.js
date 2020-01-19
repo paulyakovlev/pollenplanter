@@ -7,10 +7,6 @@ import PlantScreen from "./components/Plants";
 import PollinatorScreen from "./components/Pollinators";
 import * as firebase from "firebase";
 
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
-}
-
 // Initialize Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyBwb4yV1EUJbWab6AGyIfzrj_ShbgSdUdQ",
