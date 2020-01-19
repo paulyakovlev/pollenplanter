@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginHorizontal: 15,
     marginBottom: 15,
-    fontSize: 40,
+    fontSize: 35,
     fontFamily: "Futura"
   },
 

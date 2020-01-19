@@ -6,6 +6,7 @@ import {
   View,
   ImageBackground
 } from "react-native";
+import { Button } from "react-native-elements";
 import { ScrollView } from "react-native-gesture-handler";
 import List from "./PollinatorsList.js";
 import background from "../assets/background.png";
@@ -14,16 +15,13 @@ class Pollinators extends React.Component {
     return (
       <View style={styles.container}>
         <ImageBackground source={background} style={styles.backgroundImage}>
-          <Text style={styles.instructions}>
-            Which pollinators would you like in your garden?
-          </Text>
-          <TouchableOpacity
+          <Button
+            buttonStyle={{ backgroundColor: "orange", borderRadius: 15 }}
             onPress={() => this.props.navigation.navigate("Plants")}
             style={styles.button}
-          >
-            <Text style={styles.button}>Next</Text>
-          </TouchableOpacity>
-          <ScrollView>
+            title="Next"
+          ></Button>
+          <ScrollView style={{ width: 350 }}>
             <List />
           </ScrollView>
         </ImageBackground>
@@ -64,7 +62,8 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    color: "#888"
+    color: "white",
+    marginTop: 15
   },
 
   backgroundImage: {
