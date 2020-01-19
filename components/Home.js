@@ -27,7 +27,7 @@ class HomeScreen extends React.Component {
     return (
       <KeyboardAvoidingView style={styles.container} behavior={"padding"}>
         <ImageBackground source={background} style={styles.backgroundImage}>
-          <Text style={styles.instructions}>Welcome to PollenPlanter!</Text>
+          <Text style={styles.instructions}>PollenPlanter</Text>
           <Image source={logo} style={styles.logo} />
 
           <Card borderRadius={25}>
@@ -35,7 +35,7 @@ class HomeScreen extends React.Component {
               <Input placeholder="Zip Code" style={styles.input} />
             </View>
             <Button
-              buttonStyle={{ backgroundColor: "orange", borderRadius: 25 }}
+              buttonStyle={{ backgroundColor: "orange", borderRadius: 15 }}
               onPress={() => this.props.navigation.navigate("Pollinators")}
               style={styles.button}
               title="Next"
@@ -67,7 +67,9 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 18,
     marginHorizontal: 15,
-    marginBottom: 15
+    marginBottom: 15,
+    fontSize: 40,
+    fontFamily: "Futura"
   },
 
   input: {
