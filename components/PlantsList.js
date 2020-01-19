@@ -6,85 +6,85 @@ const plants = [
   {
     id: 0,
     name: "Evening Primrose",
-    fact: "cute",
+    fact: "cute"
     //image: image0
   },
   {
     id: 1,
     name: "Phlox",
-    fact: "pretty",
+    fact: "pretty"
     //image: image1
   },
   {
     id: 2,
     name: "Fleabane",
-    fact: "spots",
+    fact: "spots"
     //image: image2
   },
   {
     id: 3,
     name: "Goldenrod",
-    fact: "moon",
+    fact: "moon"
     //image: image3
   },
   {
     id: 4,
     name: "Blue Sage",
-    fact: "flying fox",
+    fact: "flying fox"
     //image: image4
   },
   {
     id: 5,
     name: "California Fuchia",
-    fact: "flying fox",
+    fact: "flying fox"
     //image: image4
   },
   {
     id: 6,
     name: "Hummingbird Sage",
-    fact: "flying fox",
+    fact: "flying fox"
     //image: image4
   },
   {
     id: 7,
     name: "Larkspur",
-    fact: "flying fox",
+    fact: "flying fox"
     //image: image4
   },
   {
     id: 8,
     name: "Hyssop",
-    fact: "flying fox",
+    fact: "flying fox"
     //image: image4
   },
   {
     id: 9,
     name: "California Poppy",
-    fact: "flying fox",
+    fact: "flying fox"
     //image: image4
   },
   {
     id: 10,
     name: "Golden Rod",
-    fact: "flying fox",
+    fact: "flying fox"
     //image: image4
   },
   {
     id: 11,
     name: "Salvia",
-    fact: "flying fox",
+    fact: "flying fox"
     //image: image4
   },
   {
     id: 12,
     name: "Alder",
-    fact: "flying fox",
+    fact: "flying fox"
     //image: image4
   },
   {
     id: 13,
     name: "Milkweed",
-    fact: "flying fox",
+    fact: "flying fox"
     //image: image4
   }
 ];
@@ -117,7 +117,9 @@ const styles = StyleSheet.create({
     color: "black",
     fontWeight: "bold",
     fontSize: 20,
-    marginRight: 25
+    marginRight: 25,
+    marginHorizontal: 15,
+    marginVertical: 15
   },
   image: {
     width: 75,
@@ -127,10 +129,9 @@ const styles = StyleSheet.create({
   card: {
     marginBottom: 25,
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     alignItems: "center",
     borderWidth: 0.5,
-    borderRadius: 1,
-    justifyContent: "center"
+    borderRadius: 15
   }
 });

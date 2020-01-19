@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { Text, View, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { Card } from "react-native-elements";
 
-const image0 = require("../assets/logo.png")
-const image1 = require("../assets/hummingbird.png")
-const image2 = require("../assets/monarch.png")
-const image3 = require("../assets/lunamoth.png")
-const image4 = require("../assets/bat.png")
+const image0 = require("../assets/logo.png");
+const image1 = require("../assets/hummingbird.png");
+const image2 = require("../assets/monarch.png");
+const image3 = require("../assets/lunamoth.png");
+const image4 = require("../assets/bat.png");
 
 const pollinators = [
   {
@@ -38,7 +38,6 @@ const pollinators = [
     name: "Bat",
     fact: "flying fox",
     image: image4
-
   }
 ];
 
