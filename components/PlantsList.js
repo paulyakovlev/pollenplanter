@@ -1,7 +1,34 @@
 import React, { Component } from "react";
 import { Text, View, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { Card } from "react-native-elements";
+import * as firebase from "firebase";
+import "@firebase/firestore";
 
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyBwb4yV1EUJbWab6AGyIfzrj_ShbgSdUdQ",
+  authDomain: "pollenplanter-cac8a.firebaseapp.com",
+  databaseURL: "https://pollenplanter-cac8a.firebaseio.com",
+  storageBucket: "pollenplanter-cac8a.appspot.com",
+  projectId: "pollenplanter-cac8a"
+};
+
+if (!firebase.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+const dbh = firebase.firestore();
+
+function setData() {
+  dbh
+    .collection("characters")
+    .doc("mario")
+    .set({
+      employment: "plumber",
+      outfitColor: "red",
+      specialAttack: "fireball"
+    });
+}
 const plants = [
   {
     id: 0,
@@ -95,7 +122,7 @@ class List extends React.Component {
       <Card title="Plants to Feed Your Pollinators" borderRadius={25}>
         {plants.map((u, i) => {
           return (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => setData()}>
               <View key={i} style={styles.card}>
                 <Text style={styles.name}>{u.name}</Text>
               </View>
