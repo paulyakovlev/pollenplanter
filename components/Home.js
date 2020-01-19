@@ -36,7 +36,6 @@ class HomeScreen extends React.Component {
           </Text>
           <Input placeholder="Zip Code" style={styles.input} />
           <Button
-            type="outline"
             onPress={() => this.props.navigation.navigate("Pollinators")}
             style={styles.button}
             title="button"
@@ -71,13 +70,13 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    borderColor: "gray",
+    borderColor: "white",
     paddingHorizontal: 500,
     width: "20%"
   },
 
   button: {
-    color: "black",
+    color: "white",
     marginTop: 15
   },
 
@@ -87,6 +86,6 @@ const styles = StyleSheet.create({
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
-    opacity: 0.7
+    opacity: 0.9
   }
 });
