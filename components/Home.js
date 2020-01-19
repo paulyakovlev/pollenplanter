@@ -11,52 +11,6 @@ import logo from "../assets/logo.png";
 import * as firebase from "firebase";
 import { render } from "react-dom";
 
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Image source={logo} style={styles.logo} />
-        <Text style={styles.instructions}>
-          Welcome to PollenPlanter! Please enter your zip code below to get
-          started.
-        </Text>
-        <TextInput
-          style={{
-            height: 40,
-            width: 120,
-            borderColor: "gray",
-            borderWidth: 1
-          }}
-          clearButtonMode={"while-editing"}
-          clearTextOnFocus={true}
-        />
-        <TouchableOpacity
-          onPress={() => storeHighScore("foo", "bar")}
-          style={{ backgroundColor: "blue" }}
-        >
-          <Text style={{ fontSize: 20, color: "#fff" }}>Pick a photo</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => this.props.navigation.navigate("Pollinators")}
-          style={{ backgroundColor: "blue" }}
-        >
-          <Text style={{ fontSize: 20, color: "#fff" }}>Pick a photo</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-}
-export default HomeScreen;
-
-// Initialize Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyBwb4yV1EUJbWab6AGyIfzrj_ShbgSdUdQ",
-  authDomain: "pollenplanter-cac8a.firebaseapp.com",
-  databaseURL: "https://pollenplanter-cac8a.firebaseio.com",
-  storageBucket: "pollenplanter-cac8a.appspot.com"
-};
-
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
@@ -69,6 +23,39 @@ function storeHighScore(userId, score) {
       highscore: score
     });
 }
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyBwb4yV1EUJbWab6AGyIfzrj_ShbgSdUdQ",
+  authDomain: "pollenplanter-cac8a.firebaseapp.com",
+  databaseURL: "https://pollenplanter-cac8a.firebaseio.com",
+  storageBucket: "pollenplanter-cac8a.appspot.com"
+};
+
+class HomeScreen extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Image source={logo} style={styles.logo} />
+        <Text style={styles.instructions}>
+          Welcome to PollenPlanter! Please enter your zip code below to get
+          started.
+        </Text>
+        <TextInput
+          style={styles.textBox}
+          clearButtonMode={"while-editing"}
+          clearTextOnFocus={true}
+        />
+        <TouchableOpacity
+          onPress={() => this.props.navigation.navigate("Pollinators")}
+          style={styles.button}
+        >
+          <Text style={styles.button}>Next</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+}
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -85,8 +72,20 @@ const styles = StyleSheet.create({
   },
 
   instructions: {
-    color: "#888",
+    color: "black",
     fontSize: 18,
-    marginHorizontal: 15
+    marginHorizontal: 15,
+    marginBottom: 15
+  },
+
+  textBox: {
+    height: 40,
+    width: 120,
+    borderColor: "gray",
+    borderWidth: 1
+  },
+
+  button: {
+    color: "#888"
   }
 });

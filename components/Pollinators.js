@@ -1,13 +1,23 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function PollinatorScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.instructions}>Pollinators view</Text>
-    </View>
-  );
+class Pollinators extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.instructions}>Pollinators view</Text>
+        <TouchableOpacity
+          onPress={() => this.props.navigation.navigate("Plants")}
+          style={styles.button}
+        >
+          <Text style={styles.button}>Next</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 }
+
+export default Pollinators;
 
 const styles = StyleSheet.create({
   container: {
@@ -18,7 +28,7 @@ const styles = StyleSheet.create({
   },
 
   instructions: {
-    color: "#888",
+    color: "black",
     fontSize: 18,
     marginHorizontal: 15
   }
