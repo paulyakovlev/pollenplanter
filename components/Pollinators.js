@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import List from './PollinatorsList.js'
 
 class Pollinators extends React.Component {
   render() {
@@ -12,7 +13,8 @@ class Pollinators extends React.Component {
         >
           <Text style={styles.button}>Next</Text>
         </TouchableOpacity>
-      </View>
+      <List />
+      </View>  
     );
   }
 }
