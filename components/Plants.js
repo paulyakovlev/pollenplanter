@@ -1,41 +1,20 @@
 import React from "react";
 import { StyleSheet, Text, View, ImageBackground, Image } from "react-native";
 import { Card, ListItem, Button, Icon } from "react-native-elements";
+import { ScrollView } from "react-native-gesture-handler";
 import background from "../assets/background.png";
+import List from "./PlantsList.js";
 
-const users = [
-  {
-    name: "brynn",
-    avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg"
-  },
-  {
-    name: "brynn",
-    avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg"
-  },
-  {
-    name: "brynn",
-    avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg"
-  }
-];
+
 class PlantScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <ImageBackground source={background} style={styles.backgroundImage}>
-          <Text style={styles.instructions}>Plants view</Text>
-          <Card title="EPSTEIN DIDNT KILL HIMSELF">
-            {users.map((u, i) => {
-              return (
-                <View key={i} style={styles.user}>
-                  <Image
-                    style={styles.image}
-                    source={require("../assets/logo.png")}
-                  />
-                  <Text style={styles.name}>{u.name}</Text>
-                </View>
-              );
-            })}
-          </Card>
+          <Text style={styles.instructions}></Text>
+          <ScrollView style={{ width: 350 }}>
+            <List />
+          </ScrollView>
         </ImageBackground>
       </View>
     );
@@ -61,7 +40,8 @@ const styles = StyleSheet.create({
     color: "black",
     fontSize: 18,
     marginHorizontal: 15,
-    marginBottom: 15
+    marginBottom: 15,
+    justifyContent: "center"
   },
 
   textBox: {
