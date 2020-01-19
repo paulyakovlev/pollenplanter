@@ -59,23 +59,23 @@ const pollinators = [
     fact: "moon"
   }
 ];
+
 class List extends React.Component {
-  alertItemName = item => {
-    alert(item.fact);
-  };
   render() {
     return (
       <Card title="Select Pollinators" borderRadius={25}>
         {pollinators.map((u, i) => {
           return (
-            <View key={i} style={styles.card}>
-              <Image
-                source={require("../assets/logo.png")}
-                resizeMode="cover"
-                style={styles.image}
-              />
-              <Text style={styles.name}>{u.name}</Text>
-            </View>
+            <TouchableOpacity>
+              <View key={i} style={styles.card}>
+                <Image
+                  source={require("../assets/logo.png")}
+                  resizeMode="cover"
+                  style={styles.image}
+                />
+                <Text style={styles.name}>{u.name}</Text>
+              </View>
+            </TouchableOpacity>
           );
         })}
       </Card>
@@ -87,19 +87,25 @@ const styles = StyleSheet.create({
   container: {
     padding: 10,
     marginTop: 10,
-    backgroundColor: "orange",
     alignItems: "center"
   },
-  text: {
-    color: "#FFFFFF",
+  name: {
+    color: "black",
     fontWeight: "bold",
-    fontSize: 20
+    fontSize: 20,
+    marginRight: 25
   },
   image: {
     width: 75,
-    height: 75
+    height: 75,
+    marginHorizontal: 15
   },
   card: {
-    marginBottom: 25
+    marginBottom: 25,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderWidth: 0.5,
+    borderRadius: 15
   }
 });
