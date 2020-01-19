@@ -2,61 +2,43 @@ import React, { Component } from "react";
 import { Text, View, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { Card } from "react-native-elements";
 
+const image0 = require("../assets/logo.png")
+const image1 = require("../assets/hummingbird.png")
+const image2 = require("../assets/monarch.png")
+const image3 = require("../assets/lunamoth.png")
+const image4 = require("../assets/bat.png")
+
 const pollinators = [
   {
     id: 0,
     name: "Carpenter Bee",
-    fact: "cute"
+    fact: "cute",
+    image: image0
   },
   {
     id: 1,
     name: "Hummingbird",
-    fact: "pretty"
+    fact: "pretty",
+    image: image1
   },
   {
     id: 2,
     name: "Monarch Butterfly",
-    fact: "spots"
+    fact: "spots",
+    image: image2
   },
   {
     id: 3,
     name: "Luna Moth",
-    fact: "moon"
+    fact: "moon",
+    image: image3
   },
   {
     id: 4,
-    name: "Luna Moth",
-    fact: "moon"
-  },
-  {
-    id: 5,
-    name: "Luna Moth",
-    fact: "moon"
-  },
-  {
-    id: 6,
-    name: "Luna Moth",
-    fact: "moon"
-  },
-  {
-    id: 7,
-    name: "Luna Moth",
-    fact: "moon"
-  },
-  {
-    id: 8,
-    name: "Luna Moth",
-    fact: "moon"
-  },
-  {
-    id: 9,
-    name: "Luna Moth",
-    fact: "moon"
-  },
-  {
-    id: 10,
-    name: "Luna Moth",
-    fact: "moon"
+    name: "Bat",
+    fact: "flying fox",
+    image: image4
+
   }
 ];
 
@@ -69,7 +51,7 @@ class List extends React.Component {
             <TouchableOpacity>
               <View key={i} style={styles.card}>
                 <Image
-                  source={require("../assets/logo.png")}
+                  source={u.image}
                   resizeMode="cover"
                   style={styles.image}
                 />
