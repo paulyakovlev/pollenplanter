@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Text, View, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { Card } from "react-native-elements";
 import * as firebase from "firebase";
-import "@firebase/firestore";
+import "firebase/firestore";
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -13,22 +13,10 @@ const firebaseConfig = {
   projectId: "pollenplanter-cac8a"
 };
 
-if (!firebase.length) {
-  firebase.initializeApp(firebaseConfig);
-}
+!firebase.apps.length
+  ? firebase.initializeApp(firebaseConfig).firestore()
+  : firebase.app().firestore();
 
-const dbh = firebase.firestore();
-
-function setData() {
-  dbh
-    .collection("characters")
-    .doc("mario")
-    .set({
-      employment: "plumber",
-      outfitColor: "red",
-      specialAttack: "fireball"
-    });
-}
 const plants = [
   {
     id: 0,
@@ -115,14 +103,25 @@ const plants = [
     //image: image4
   }
 ];
-
+const dbref = firebase.firestore();
+function getData() {
+  dbref
+    .collection("nativeplants")
+    .doc("Milkweed")
+    .get()
+    .then(querySnapshot => {
+      const data = querySnapshot.docs.map(doc => doc.data());
+      alert(doc._document.data.toString());
+    });
+}
+//TODO: <TouchableOpacity onPress={() => getData()}> crashes the app
 class List extends React.Component {
   render() {
     return (
       <Card title="Plants to Feed Your Pollinators" borderRadius={25}>
         {plants.map((u, i) => {
           return (
-            <TouchableOpacity onPress={() => setData()}>
+            <TouchableOpacity onPress={() => getData()}>
               <View key={i} style={styles.card}>
                 <Text style={styles.name}>{u.name}</Text>
               </View>
